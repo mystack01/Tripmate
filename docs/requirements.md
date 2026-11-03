@@ -30,3 +30,17 @@ Planning a trip usually means juggling several apps: one for weather, one for cu
 - **FR13:** User can manage a packing list
 - **FR14:** Admin can view total users, trips and platform statistics
 - **FR15:** Admin can list and delete users
+
+## Non-Functional Requirements
+
+- **Security:** passwords hashed with bcrypt, JWT for sessions, helmet, CORS allow-list, rate limiting, input validation, NoSQL sanitising
+- **Usability:** mobile-friendly layout, dark mode, clear error messages
+- **Accessibility:** semantic HTML, labels on inputs, keyboard navigation, colour contrast
+- **Performance:** client builds with Vite, list endpoints paginated where needed
+- **Reliability:** all endpoints validated, JSON error responses, no server crash on bad input
+
+## Feasibility
+
+- All external APIs are **free** (Open-Meteo, World Bank, ExchangeRate-API, countries dataset, OpenStreetMap)
+- Hosting on free tiers (Render + Vercel + MongoDB Atlas M0)
+- Single language stack (JavaScript) keeps the timeline short
