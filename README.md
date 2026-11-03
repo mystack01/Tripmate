@@ -1,4 +1,4 @@
-# TripMate – Smart Travel Planner (MERN)
+# TripMate – Smart Travel Planner
 
 Plan trips with live weather, country information and budget conversion.
 
