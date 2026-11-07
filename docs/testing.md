@@ -18,3 +18,8 @@ Tested locally with VS Code REST Client on http://localhost:5000.
 | Admin route as normal user | GET | /api/admin/users | 403 | `"Admin access only"` |
 | Access another user's trip | GET | /api/trips/:id | 403 | `"Not authorized"` |
 | Create trip with empty title | POST | /api/trips | 400 | `"Validation failed"` + title error |
+
+## Quality & Accessibility
+
+- **Lighthouse Accessibility Score:** 100/100
+- **Notes:** Ran Lighthouse audit in Chrome on the local development server. No major issues found.
