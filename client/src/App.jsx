@@ -9,6 +9,7 @@ import Dashboard from './pages/Dashboard.jsx';
 import TripForm from './pages/TripForm.jsx';
 import TripDetail from './pages/TripDetail.jsx';
 import Admin from './pages/Admin.jsx';
+import NotFound from './pages/NotFound.jsx';
 
 function Home() {
   const { user, loading } = useAuth();
@@ -30,7 +31,7 @@ export default function App() {
           <Route path="/trips/:id" element={<ProtectedRoute><TripDetail /></ProtectedRoute>} />
           <Route path="/trips/:id/edit" element={<ProtectedRoute><TripForm /></ProtectedRoute>} />
           <Route path="/admin" element={<ProtectedRoute adminOnly><Admin /></ProtectedRoute>} />
-          <Route path="*" element={<Navigate to="/" replace />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
       <footer className="footer">
