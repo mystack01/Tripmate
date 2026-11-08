@@ -23,3 +23,12 @@ Tested locally with VS Code REST Client on http://localhost:5000.
 
 - **Lighthouse Accessibility Score:** 100/100
 - **Notes:** Ran Lighthouse audit in Chrome on the local development server. No major issues found.
+
+## Pre-Deployment Checks
+
+- **Local smoke test:** Verified register, login, create trip, edit trip, delete trip, and admin dashboard all work locally.
+- **Known limitations:** 
+  1. No email verification.
+  2. No password reset.
+  3. Token stored in localStorage.
+  4. Free-tier servers sleep after 15 minutes of inactivity.

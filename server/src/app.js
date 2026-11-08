@@ -1,5 +1,6 @@
 import express from 'express';
 import helmet from 'helmet';
+import morgan from 'morgan';
 import cors from 'cors';
 import rateLimit from 'express-rate-limit';
 import mongoSanitize from 'express-mongo-sanitize';
@@ -14,6 +15,7 @@ app.set('trust proxy', 1); // needed behind Render's proxy for rate limiting
 
 // Security middleware
 app.use(helmet());
+app.use(morgan(process.env.NODE_ENV === 'production' ? 'combined' : 'dev'));
 const origins = (process.env.CLIENT_URL || 'http://localhost:5173')
   .split(',')
   .map((s) => s.trim());
