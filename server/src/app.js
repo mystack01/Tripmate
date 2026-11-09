@@ -19,6 +19,8 @@ app.use(morgan(process.env.NODE_ENV === 'production' ? 'combined' : 'dev'));
 const origins = (process.env.CLIENT_URL || 'http://localhost:5173')
   .split(',')
   .map((s) => s.trim());
+  // Allow any Vercel deployment URL (production and previews)
+origins.push(/\.vercel\.app$/);
 app.use(cors({ origin: origins }));
 app.use(express.json({ limit: '10kb' }));
 app.use(mongoSanitize()); // strips $ and . operators (NoSQL injection)
